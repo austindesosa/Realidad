@@ -41,6 +41,10 @@ int flag_int(bool x, int place){
   return ret;
 }
 
+unsigned int max_uint(int size){
+  return (unsigned int)(pow(2,size)-1);
+}
+
 
 class Watch{
   //Watch objects keep track of time
@@ -56,6 +60,7 @@ class Watch{
   }
 
   void rec(void){clk_last = clock();}
+
 
   void inc(clock_t delay){
     sleep(delay);
@@ -81,11 +86,7 @@ class Watch{
 
 
 int main(void){
-  printf("Realidad.cpp running\n\n");
-  Watch wa = Watch();
-  wa.report();
-  int leo = (int) wa.life();
-  printf("wa.life() = %i",leo);
+  unsigned int yo = max_uint(40); printf("%x",yo);
 
   return 0;
 
